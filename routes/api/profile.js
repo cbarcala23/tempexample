@@ -136,7 +136,7 @@ router.get("/", async (req, res) => {
 router.get("/user/:company", async (req, res) => {
   try {
     const profile = await Profile.find({
-      user: req.params.company
+      company: req.params.company
     }).populate("user", ["name", "avatar"]);
     res.json(profile);
 
